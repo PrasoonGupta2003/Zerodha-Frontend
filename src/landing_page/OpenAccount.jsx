@@ -1,7 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom"; // <-- import Link
-
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+const navigate=useNavigate();
 function OpenAccount() {
+  const { user, setUser } = useAuth();
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (user) {
+      window.location.href = "https://zerodha-dashboard-ypwy.onrender.com"; // Change if deployed
+    } else {
+      navigate("/signup");
+    }
+  };
   return (
     <div className="container p-5 mb-5">
       <div className="row text-center">
@@ -10,14 +20,13 @@ function OpenAccount() {
           Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and
           F&O trades.
         </p>
-        <Link to="https://zerodha-backend-4jc1.onrender.com/signup" style={{ textDecoration: "none" }}>
           <button
             className="p-2 btn btn-primary fs-5 mb-5"
             style={{ width: "20%", margin: "0 auto" }}
+            onClick={handleClick}
           >
             Sign up Now
           </button>
-        </Link>
       </div>
     </div>
   );
