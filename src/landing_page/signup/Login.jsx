@@ -15,7 +15,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3002/login", formData);
+      const res = await axios.post("https://zerodha-backend-4jc1.onrender.com/login", formData);
       setUser(res.data); // Save user info
       localStorage.setItem("user", JSON.stringify(res.data)); // persist
       navigate("/"); // redirect to homepage or dashboard

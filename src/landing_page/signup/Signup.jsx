@@ -17,7 +17,7 @@ function Signup() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:3002/signup", formData);
+      await axios.post("https://zerodha-backend-4jc1.onrender.com/signup", formData);
 
       const user = { name: formData.name, email: formData.email };
       setUser(user);
