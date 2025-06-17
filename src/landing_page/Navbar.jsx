@@ -9,7 +9,7 @@ function Navbar() {
   const handleDashboardClick = (e) => {
     e.preventDefault();
     if (user) {
-      window.location.href = "http://localhost:3000/"; // Change if deployed
+      window.location.href = "https://zerodha-dashboard-ypwy.onrender.com"; // Change if deployed
     } else {
       navigate("/signup");
     }

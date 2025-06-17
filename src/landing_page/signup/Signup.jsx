@@ -24,7 +24,7 @@ function Signup() {
       localStorage.setItem("user", JSON.stringify(user)); // Save to localStorage
 
       // Redirect to dashboard
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "https://zerodha-dashboard-ypwy.onrender.com";
     } catch (err) {
       alert(err.response?.data || "Signup failed");
     } finally {
