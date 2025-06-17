@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-const navigate=useNavigate();
+
 function Hero() {
     const { user, setUser } = useAuth();
+    const navigate=useNavigate();
       const handleClick = (e) => {
         e.preventDefault();
         if (user) {
